@@ -9,10 +9,22 @@ public class Money {
         int salary = scanner.nextInt();
         System.out.println("Введите планируемую затрату на транспорт: ");
         int transportPay = scanner.nextInt();
+        if (salary < transportPay){
+            System.out.println("Затраты на транспорт боьлше чем зарплата :(");
+            System.exit(0);
+        }
         System.out.println("Введите плнаиркемые затраты на еду: ");
         int eatPay = scanner.nextInt();
+        if (salary < transportPay + eatPay){
+            System.out.println("Затраты на транспорт и еду боьлше чем зарплата :(");
+            System.exit(0);
+        }
         System.out.println("Введите ссколько вы хотите отлошить денег: ");
         int saveMoney = scanner.nextInt();
+        if (salary < transportPay +eatPay +saveMoney){
+            System.out.println("Затраты на транспорт, еду и сбережения боьлше чем зарплата :(");
+            System.exit(0);
+        }
         int allExpensess = transportPay + eatPay + saveMoney;
         moneyHelp(salary, transportPay, eatPay, allExpensess, saveMoney);
     }
